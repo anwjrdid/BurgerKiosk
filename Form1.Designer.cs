@@ -41,6 +41,7 @@
             chkCheese = new CheckBox();
             chkSauce = new CheckBox();
             grpOrder = new GroupBox();
+            lblError = new Label();
             lblTotalCost = new Label();
             lstOrder = new ListBox();
             label1 = new Label();
@@ -205,22 +206,34 @@
             // 
             // grpOrder
             // 
+            grpOrder.Controls.Add(lblError);
             grpOrder.Controls.Add(lblTotalCost);
             grpOrder.Controls.Add(lstOrder);
             grpOrder.Font = new Font("맑은 고딕", 12F, FontStyle.Bold, GraphicsUnit.Point, 129);
             grpOrder.ForeColor = Color.IndianRed;
             grpOrder.Location = new Point(461, 77);
             grpOrder.Name = "grpOrder";
-            grpOrder.Size = new Size(327, 278);
+            grpOrder.Size = new Size(327, 311);
             grpOrder.TabIndex = 0;
             grpOrder.TabStop = false;
             grpOrder.Text = "주문 내역";
+            // 
+            // lblError
+            // 
+            lblError.AutoSize = true;
+            lblError.Font = new Font("맑은 고딕", 10.8F, FontStyle.Bold);
+            lblError.Location = new Point(17, 249);
+            lblError.Name = "lblError";
+            lblError.Size = new Size(192, 25);
+            lblError.TabIndex = 10;
+            lblError.Text = "메뉴를 선택해 주세요!";
+            lblError.Visible = false;
             // 
             // lblTotalCost
             // 
             lblTotalCost.AutoSize = true;
             lblTotalCost.ForeColor = SystemColors.Highlight;
-            lblTotalCost.Location = new Point(17, 241);
+            lblTotalCost.Location = new Point(17, 280);
             lblTotalCost.Name = "lblTotalCost";
             lblTotalCost.Size = new Size(130, 28);
             lblTotalCost.TabIndex = 9;
@@ -251,7 +264,7 @@
             btnOrder.BackColor = Color.MediumSeaGreen;
             btnOrder.Font = new Font("맑은 고딕", 15F);
             btnOrder.ForeColor = SystemColors.ButtonHighlight;
-            btnOrder.Location = new Point(462, 372);
+            btnOrder.Location = new Point(462, 394);
             btnOrder.Name = "btnOrder";
             btnOrder.Size = new Size(156, 44);
             btnOrder.TabIndex = 2;
@@ -264,7 +277,7 @@
             btnClear.BackColor = Color.IndianRed;
             btnClear.Font = new Font("맑은 고딕", 15F, FontStyle.Regular, GraphicsUnit.Point, 129);
             btnClear.ForeColor = SystemColors.ButtonHighlight;
-            btnClear.Location = new Point(642, 372);
+            btnClear.Location = new Point(642, 394);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(146, 44);
             btnClear.TabIndex = 3;
@@ -318,5 +331,6 @@
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
+        private Label lblError;
     }
 }
