@@ -1,11 +1,8 @@
-using System;
-using System.Windows.Forms;
-
 namespace BurgerKiosk
 {
     public partial class Form1 : Form
     {
-        // 총 금액을 저장할 전역 변수
+        // 총 금액 변수
         int totalCost = 0;
 
         public Form1()
@@ -13,27 +10,14 @@ namespace BurgerKiosk
             InitializeComponent();
         }
 
-        // '주문하기' 버튼 클릭 이벤트 (Enter 키와 연동됨)
-        private void btnOrder_Click(object sender, EventArgs e)
+        // [핵심] 실시간 계산 및 화면 업데이트 메서드
+        private void UpdateOrderInfo()
         {
-            // 1. 입력 검증 (과제 2 내용)
-            if (!rdoHam.Checked && !rdoBul.Checked && !rdoChi.Checked)
-            {
-                lblError.Text = "메뉴를 선택하세요.";
-                lblError.Visible = true;
-                return; // 메뉴 미선택 시 로직 종료
-            }
-            else
-            {
-                lblError.Text = "";
-                lblError.Visible = false;
-            }
-
-            // 2. 변수 및 리스트박스 초기화
+            // 1. 변수 및 UI 초기화
             totalCost = 0;
             lstOrder.Items.Clear();
 
-            // 3. 메뉴 가격 계산 (RadioButton)
+            // 2. 메뉴 가격 계산 (RadioButton)
             if (rdoHam.Checked)
             {
                 totalCost += 5000;
@@ -50,7 +34,7 @@ namespace BurgerKiosk
                 lstOrder.Items.Add("치킨버거 3,000원");
             }
 
-            // 4. 추가 옵션 가격 계산 (CheckBox)
+            // 3. 추가 옵션 가격 계산 (CheckBox)
             if (chkPotato.Checked)
             {
                 totalCost += 3500;
@@ -72,34 +56,54 @@ namespace BurgerKiosk
                 lstOrder.Items.Add("소스 추가 500원");
             }
 
-            // 5. 최종 결과 출력
+            // 4. 결과 출력
             lblTotalCost.Text = "총 금액 : " + totalCost.ToString() + "원";
 
-            // [과제 3] 주문 완료 후 다시 첫 번째 메뉴로 포커스 이동
+            // 메뉴가 하나라도 선택되면 에러 메시지 숨김
+            if (rdoHam.Checked || rdoBul.Checked || rdoChi.Checked)
+            {
+                lblError.Visible = false;
+                lblError.Text = "";
+            }
+        }
+
+        // '주문하기' 버튼: 이제는 입력 검증 위주로 동작
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            if (!rdoHam.Checked && !rdoBul.Checked && !rdoChi.Checked)
+            {
+                lblError.Text = "메뉴를 선택하세요.";
+                lblError.Visible = true;
+                return;
+            }
+
+            // 이미 UpdateOrderInfo에서 계산이 되었겠지만, 확정을 위해 호출
+            UpdateOrderInfo();
+            MessageBox.Show("주문이 완료되었습니다!");
             rdoHam.Focus();
         }
 
-        // '초기화' 버튼 클릭 이벤트
+        // 초기화 버튼
         private void btnClear_Click(object sender, EventArgs e)
         {
-            // 모든 선택 상태 해제
             rdoHam.Checked = false;
             rdoBul.Checked = false;
             rdoChi.Checked = false;
-
             chkPotato.Checked = false;
             chkCola.Checked = false;
             chkCheese.Checked = false;
             chkSauce.Checked = false;
 
-            // 출력 컨트롤 및 에러 메시지 초기화
             lstOrder.Items.Clear();
             lblTotalCost.Text = "총 금액 : 0원";
             lblError.Visible = false;
-            lblError.Text = "";
-
-            // [과제 3] 초기화 후 첫 번째 메뉴로 포커스 이동
             rdoHam.Focus();
+        }
+
+        // 컨트롤들의 값이 바뀔 때마다 실행될 이벤트 메서드
+        private void OrderControl_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdateOrderInfo();
         }
     }
 }
