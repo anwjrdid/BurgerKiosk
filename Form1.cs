@@ -75,6 +75,8 @@ namespace BurgerKiosk
             // 5. 최종 결과 출력
             lblTotalCost.Text = "총 금액 : " + totalCost.ToString() + "원";
 
+            // [과제 3] 주문 완료 후 다시 첫 번째 메뉴로 포커스 이동
+            rdoHam.Focus();
         }
 
         // '초기화' 버튼 클릭 이벤트
