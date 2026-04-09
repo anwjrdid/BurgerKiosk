@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             grpMenu = new GroupBox();
-            pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            pictureBox3 = new PictureBox();
+            pcHam = new PictureBox();
+            pcBul = new PictureBox();
+            pcChi = new PictureBox();
             rdoHam = new RadioButton();
             rdoBul = new RadioButton();
             rdoChi = new RadioButton();
@@ -48,18 +48,18 @@
             btnOrder = new Button();
             btnClear = new Button();
             grpMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pcHam).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pcBul).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pcChi).BeginInit();
             grpOption.SuspendLayout();
             grpOrder.SuspendLayout();
             SuspendLayout();
             // 
             // grpMenu
             // 
-            grpMenu.Controls.Add(pictureBox1);
-            grpMenu.Controls.Add(pictureBox2);
-            grpMenu.Controls.Add(pictureBox3);
+            grpMenu.Controls.Add(pcHam);
+            grpMenu.Controls.Add(pcBul);
+            grpMenu.Controls.Add(pcChi);
             grpMenu.Controls.Add(rdoHam);
             grpMenu.Controls.Add(rdoBul);
             grpMenu.Controls.Add(rdoChi);
@@ -72,35 +72,35 @@
             grpMenu.TabStop = false;
             grpMenu.Text = "메뉴 선택";
             // 
-            // pictureBox1
+            // pcHam
             // 
-            pictureBox1.Image = Properties.Resources.Buger;
-            pictureBox1.Location = new Point(123, 38);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(101, 82);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 4;
-            pictureBox1.TabStop = false;
+            pcHam.Image = Properties.Resources.Buger;
+            pcHam.Location = new Point(123, 38);
+            pcHam.Name = "pcHam";
+            pcHam.Size = new Size(101, 82);
+            pcHam.SizeMode = PictureBoxSizeMode.StretchImage;
+            pcHam.TabIndex = 4;
+            pcHam.TabStop = false;
             // 
-            // pictureBox2
+            // pcBul
             // 
-            pictureBox2.Image = Properties.Resources.Bulggogi;
-            pictureBox2.Location = new Point(123, 141);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(102, 82);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 5;
-            pictureBox2.TabStop = false;
+            pcBul.Image = Properties.Resources.Bulggogi;
+            pcBul.Location = new Point(123, 141);
+            pcBul.Name = "pcBul";
+            pcBul.Size = new Size(102, 82);
+            pcBul.SizeMode = PictureBoxSizeMode.StretchImage;
+            pcBul.TabIndex = 5;
+            pcBul.TabStop = false;
             // 
-            // pictureBox3
+            // pcChi
             // 
-            pictureBox3.Image = Properties.Resources.Shrimp;
-            pictureBox3.Location = new Point(123, 241);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(102, 82);
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.TabIndex = 6;
-            pictureBox3.TabStop = false;
+            pcChi.Image = Properties.Resources.Shrimp;
+            pcChi.Location = new Point(123, 241);
+            pcChi.Name = "pcChi";
+            pcChi.Size = new Size(102, 82);
+            pcChi.SizeMode = PictureBoxSizeMode.StretchImage;
+            pcChi.TabIndex = 6;
+            pcChi.TabStop = false;
             // 
             // rdoHam
             // 
@@ -307,9 +307,9 @@
             Text = "Burger Kiosk v1.0";
             grpMenu.ResumeLayout(false);
             grpMenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pcHam).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pcBul).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pcChi).EndInit();
             grpOption.ResumeLayout(false);
             grpOption.PerformLayout();
             grpOrder.ResumeLayout(false);
@@ -335,9 +335,9 @@
         private CheckBox chkSauce;
         private Label lblTotalCost;
         private ListBox lstOrder;
-        private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox3;
+        private PictureBox pcHam;
+        private PictureBox pcBul;
+        private PictureBox pcChi;
         private Label lblError;
     }
 }
