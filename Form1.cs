@@ -57,7 +57,7 @@ namespace BurgerKiosk
             }
 
             // 4. 결과 출력
-            lblTotalCost.Text = "총 금액 : " + totalCost.ToString() + "원";
+            lblTotalCost.Text = "총 금액 : " + totalCost.ToString("N0") + "원";
 
             // 메뉴가 하나라도 선택되면 에러 메시지 숨김
             if (rdoHam.Checked || rdoBul.Checked || rdoChi.Checked)
